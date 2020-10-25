@@ -30,7 +30,7 @@ import androidx.annotation.Nullable;
 
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
-import com.android.internal.util.crdroid.Utils;
+import com.android.internal.util.pixelstar.Utils;
 import com.android.systemui.Dependency;
 import com.android.systemui.res.R;
 import com.android.systemui.dagger.qualifiers.Background;
