@@ -6622,6 +6622,13 @@ public final class Settings {
         public static final String EDGE_GESTURE_Y_DEAD_ZONE = "edge_gesture_y_dead_zone";
 
         /**
+         * Arcane Idle Manager
+         * @hide
+         */
+        @Readable
+        public static final String ARCANE_IDLE_MANAGER = "arcane_idle_manager";
+
+        /**
          * Keys we no longer back up under the current schema, but want to continue to
          * process when restoring historical backup datasets.
          *
