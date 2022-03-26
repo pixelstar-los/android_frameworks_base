@@ -5,7 +5,4 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Statusbar Icons -->
-    <string name="status_bar_nfc">NFC</string>
-    
 </resources>
