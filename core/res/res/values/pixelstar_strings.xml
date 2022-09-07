@@ -3,7 +3,6 @@
      Copyright (C)2022-2023 The Project Pixelstar
      SPDX-License-Identifier: Apache-2.0
 -->
-<resources>
-    <!-- Whether Pixel props is enabled -->
-    <bool name="config_enablePixelProps">true</bool>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
 </resources>
