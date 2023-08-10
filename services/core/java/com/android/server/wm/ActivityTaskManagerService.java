@@ -291,12 +291,9 @@ import com.android.server.uri.UriGrantsManagerInternal;
 import com.android.server.wallpaper.WallpaperManagerInternal;
 import com.android.wm.shell.Flags;
 
-<<<<<<< HEAD
 import org.lineageos.internal.applications.LineageActivityManager;
-=======
-import com.android.internal.util.custom.PixelPropsUtils;
+
 import com.android.internal.util.custom.cutout.CutoutFullscreenController;
->>>>>>> dd10993c657a (base: Implement cutout force full screen [1/2])
 
 import java.io.BufferedReader;
 import java.io.File;
