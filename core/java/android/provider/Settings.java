@@ -6641,6 +6641,28 @@ public final class Settings {
         public static final String VOLUME_ROCKER_WAKE = "volume_rocker_wake";
 
         /**
+         * Haptic feedback on brightness slider
+         * @hide
+         */
+        public static final String QS_BRIGHTNESS_SLIDER_HAPTIC = "qs_brightness_slider_haptic";
+
+        /**
+         * @hide
+         */
+        public static final String QS_PANEL_TILE_HAPTIC = "qs_panel_tile_haptic";
+
+        /**
+         * @hide
+         */
+        @Readable
+        public static final String EDGE_SCROLLING_HAPTICS_INTENSITY = "edge_scrolling_haptics_intensity";
+
+        /**
+         * @hide
+         */
+        public static final String VOLUME_SLIDER_HAPTICS_INTENSITY = "volume_slider_haptics_intensity";
+
+        /**
          * These are all public system settings
          *
          * @hide
@@ -12643,6 +12665,12 @@ public final class Settings {
         public static final String ENABLE_PROJECTION_PRIVACY_INDICATOR = "enable_projection_privacy_indicator";
 
         /**
+         * Whether or not to vibrate when back gesture is used
+         * @hide
+         */
+        public static final String BACK_GESTURE_HAPTIC_INTENSITY = "back_gesture_haptic_intensity";
+
+        /**
          * Our GameSpace can't write to device_config directly [GTS]
          * Use this as intermediate to pass device_config property
          * from our GameSpace to com.android.server.app.GameManagerService
@@ -12689,130 +12717,10 @@ public final class Settings {
         public static final String PULSE_ON_NEW_TRACKS = "pulse_on_new_tracks";
 
         /**
-         * Whether to enable DOZE only when charging
+         * Whether or not to vibrate when back gesture is used
          * @hide
          */
-        public static final String DOZE_ON_CHARGE = "doze_on_charge";
-
-        /**
-         * Pulse navbar music visualizer
-         * @hide
-         */
-        public static final String NAVBAR_PULSE_ENABLED = "navbar_pulse_enabled";
-
-        /**
-         * Pulse ambient music visualizer
-         * @hide
-         */
-        public static final String AMBIENT_PULSE_ENABLED = "ambient_pulse_enabled";
-
-        /**
-         * Pulse lockscreen music visualizer
-         * @hide
-         */
-        public static final String LOCKSCREEN_PULSE_ENABLED = "lockscreen_pulse_enabled";
-
-        /**
-         * Pulse navbar music visualizer color type
-         * @hide
-         */
-        public static final String PULSE_COLOR_MODE = "pulse_color_mode";
-
-        /**
-         * Pulse music visualizer user defined color
-         * @hide
-         */
-        public static final String PULSE_COLOR_USER = "pulse_color_user";
-
-        /**
-         * Pulse lavalamp animation speed
-         * @hide
-         */
-        public static final String PULSE_LAVALAMP_SPEED = "pulse_lavalamp_speed";
-
-        /**
-         * Pulse renderer implementation
-         * @hide
-         */
-        public static final String PULSE_RENDER_STYLE = "pulse_render_style";
-
-        /**
-         * Custom Pulse Widths
-         * @hide
-         */
-        public static final String PULSE_CUSTOM_DIMEN = "pulse_custom_dimen";
-
-        /**
-         * Custom Spacing Between Pulse Bars
-         * @hide
-         */
-        public static final String PULSE_CUSTOM_DIV = "pulse_custom_div";
-
-        /**
-         * Custom Pulse Block Size
-         * @hide
-         */
-        public static final String PULSE_FILLED_BLOCK_SIZE = "pulse_filled_block_size";
-
-        /**
-         * Custom Spacing Between Pulse Blocks
-         * @hide
-         */
-        public static final String PULSE_EMPTY_BLOCK_SIZE = "pulse_empty_block_size";
-
-        /**
-         * Custom Pulse Sanity Levels
-         * @hide
-         */
-        public static final String PULSE_CUSTOM_FUDGE_FACTOR = "pulse_custom_fudge_factor";
-
-        /**
-         * Pulse Fudge Factor
-         * @hide
-         */
-        public static final String PULSE_SOLID_FUDGE_FACTOR = "pulse_solid_fudge_factor";
-
-        /**
-         * Pulse Solid units count
-         * @hide
-         */
-        public static final String PULSE_SOLID_UNITS_COUNT = "pulse_solid_units_count";
-
-        /**
-         * Pulse Solid units opacity
-         * @hide
-         */
-        public static final String PULSE_SOLID_UNITS_OPACITY = "pulse_solid_units_opacity";
-
-        /**
-         * Pulse Solid units rounded
-         * @hide
-         */
-        public static final String PULSE_SOLID_UNITS_ROUNDED = "pulse_solid_units_rounded";
-
-        /**
-         * Pulse uses FFT averaging
-         * @hide
-         */
-        public static final String PULSE_SMOOTHING_ENABLED = "pulse_smoothing_enabled";
-
-	/**
-         * Pulse gravity
-         * @hide
-         */
-        public static final String PULSE_CUSTOM_GRAVITY = "pulse_custom_gravity";
-
-        /**
-         * Enable and disable QS Panel visualizer
-         * @hide
-         */
-        public static final String VISUALIZER_CENTER_MIRRORED = "visualizer_center_mirrored";
-        
-        /**
-         * Pulse vertical mirror
-         * @hide
-         */
-        public static final String PULSE_VERTICAL_MIRROR = "pulse_vertical_mirror";    
+        public static final String BACK_GESTURE_HAPTIC = "back_gesture_haptic";
 
         /**
          * Keys we no longer back up under the current schema, but want to continue to
