@@ -6634,6 +6634,28 @@ public final class Settings {
         };
 
         /**
+         * Haptic feedback on brightness slider
+         * @hide
+         */
+        public static final String QS_BRIGHTNESS_SLIDER_HAPTIC = "qs_brightness_slider_haptic";
+
+        /**
+         * @hide
+         */
+        public static final String QS_PANEL_TILE_HAPTIC = "qs_panel_tile_haptic";
+
+        /**
+         * @hide
+         */
+        @Readable
+        public static final String EDGE_SCROLLING_HAPTICS_INTENSITY = "edge_scrolling_haptics_intensity";
+
+        /**
+         * @hide
+         */
+        public static final String VOLUME_SLIDER_HAPTICS_INTENSITY = "volume_slider_haptics_intensity";
+
+        /**
          * These are all public system settings
          *
          * @hide
@@ -12636,6 +12658,12 @@ public final class Settings {
         public static final String ENABLE_PROJECTION_PRIVACY_INDICATOR = "enable_projection_privacy_indicator";
 
         /**
+         * Whether or not to vibrate when back gesture is used
+         * @hide
+         */
+        public static final String BACK_GESTURE_HAPTIC_INTENSITY = "back_gesture_haptic_intensity";
+
+        /**
          * Our GameSpace can't write to device_config directly [GTS]
          * Use this as intermediate to pass device_config property
          * from our GameSpace to com.android.server.app.GameManagerService
@@ -12800,12 +12828,18 @@ public final class Settings {
          * @hide
          */
         public static final String VISUALIZER_CENTER_MIRRORED = "visualizer_center_mirrored";
-        
+
         /**
          * Pulse vertical mirror
          * @hide
          */
         public static final String PULSE_VERTICAL_MIRROR = "pulse_vertical_mirror";    
+        
+        /**
+         * Whether or not to vibrate when back gesture is used
+         * @hide
+         */
+        public static final String BACK_GESTURE_HAPTIC = "back_gesture_haptic";
 
         /**
          * Keys we no longer back up under the current schema, but want to continue to

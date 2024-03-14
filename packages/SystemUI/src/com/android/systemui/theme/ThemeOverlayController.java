@@ -192,6 +192,8 @@ public class ThemeOverlayController implements CoreStartable, Dumpable, TunerSer
     private DynamicScheme mDynamicSchemeLight;
     private final TunerService mTunerService;
 
+    private final CustomThemeController mThemeController;
+
     // Defers changing themes until Setup Wizard is done.
     private boolean mDeferredThemeEvaluation;
     // Determines if we should ignore THEME_CUSTOMIZATION_OVERLAY_PACKAGES setting changes.
@@ -481,6 +483,7 @@ public class ThemeOverlayController implements CoreStartable, Dumpable, TunerSer
         mActivityManager = activityManager;
         mTunerService = tunerService;
         dumpManager.registerDumpable(TAG, this);
+        mThemeController = new CustomThemeController(mContext.getContentResolver(), mBgHandler);
     }
 
     @Override
@@ -489,6 +492,7 @@ public class ThemeOverlayController implements CoreStartable, Dumpable, TunerSer
         final IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_PROFILE_ADDED);
         filter.addAction(Intent.ACTION_WALLPAPER_CHANGED);
+        mThemeController.observe("qs_panel_tile_haptic", true /* system */, () -> reevaluateSystemTheme(true));
         mBroadcastDispatcher.registerReceiver(mBroadcastReceiver, filter, mMainExecutor,
                 UserHandle.ALL);
         mSecureSettings.registerContentObserverForUser(
