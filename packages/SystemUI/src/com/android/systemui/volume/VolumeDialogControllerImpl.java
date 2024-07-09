@@ -560,6 +560,7 @@ public class VolumeDialogControllerImpl implements VolumeDialogController, Dumpa
                 VibrationUtils.triggerVibration(mContext, vibrateIntensity);
             }
         }
+
         if (showVibrateHint) {
             mCallbacks.onShowVibrateHint();
         }
