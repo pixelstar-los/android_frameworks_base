@@ -70,6 +70,7 @@ import android.os.PowerManager;
 import android.os.PowerManagerInternal;
 import android.os.Trace;
 import android.os.UserManager;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.util.IndentingPrintWriter;
 import android.util.Log;
@@ -289,6 +290,9 @@ public final class NotificationPanelViewController implements ShadeSurface, Dump
             "lineagesystem:" + LineageSettings.System.DOUBLE_TAP_SLEEP_GESTURE;
      private static final String DOUBLE_TAP_SLEEP_LOCKSCREEN =
              "system:" + Settings.System.DOUBLE_TAP_SLEEP_LOCKSCREEN;
+
+    private static final String QS_HAPTICS_INTENSITY =
+            "system:" + "qs_haptics_intensity";
 
     private static final Rect M_DUMMY_DIRTY_RECT = new Rect(0, 0, 1, 1);
     private static final Rect EMPTY_RECT = new Rect();
@@ -642,6 +646,9 @@ public final class NotificationPanelViewController implements ShadeSurface, Dump
     private final PowerManagerInternal mLocalPowerManager;
 
     private final SplitShadeStateController mSplitShadeStateController;
+
+    private int mQsHapticsIntensity;
+
     private final Runnable mFlingCollapseRunnable = () -> fling(0, false /* expand */,
             mNextCollapseSpeedUpFactor, false /* expandBecauseOfFalsing */);
     private final Runnable mAnimateKeyguardBottomAreaInvisibleEndRunnable =
@@ -3825,7 +3832,7 @@ public final class NotificationPanelViewController implements ShadeSurface, Dump
     private void maybeVibrateOnOpening(boolean openingWithTouch) {
         if (mVibrateOnOpening && mBarState != KEYGUARD && mBarState != SHADE_LOCKED) {
             if (!openingWithTouch || !mHasVibratedOnOpen) {
-                VibrationUtils.triggerVibration(mView.getContext(), 2);
+                VibrationUtils.triggerVibration(mView.getContext(), mQsHapticsIntensity);
                 mHasVibratedOnOpen = true;
                 mShadeLog.v("Vibrating on opening, mHasVibratedOnOpen=true");
             }
@@ -4723,6 +4730,7 @@ public final class NotificationPanelViewController implements ShadeSurface, Dump
             mConfigurationController.addCallback(mConfigurationListener);
             mTunerService.addTunable(this, DOUBLE_TAP_SLEEP_GESTURE);
             mTunerService.addTunable(this, DOUBLE_TAP_SLEEP_LOCKSCREEN);
+            mTunerService.addTunable(this, QS_HAPTICS_INTENSITY);
             // Theme might have changed between inflating this view and attaching it to the
             // window, so
             // force a call to onThemeChanged
@@ -4758,8 +4766,11 @@ public final class NotificationPanelViewController implements ShadeSurface, Dump
                                 mResources.getBoolean(org.lineageos.platform.internal.R.bool.
                                 config_dt2sGestureEnabledByDefault));
                     break;
-                default:
+                case QS_HAPTICS_INTENSITY:
+                    mQsHapticsIntensity = TunerService.parseInteger(newValue, 1);
                     break;
+                default:
+                   break;
             }
         }
     }
