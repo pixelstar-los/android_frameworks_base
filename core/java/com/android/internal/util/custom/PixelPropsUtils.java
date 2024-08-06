@@ -38,7 +38,7 @@ import android.util.Log;
 import android.view.WindowManager;
 
 import com.android.internal.R;
-import com.android.internal.util.custom.CustomUtils;
+import com.android.internal.util.pixelstar.Utils;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -253,7 +253,7 @@ public class PixelPropsUtils {
     public static void spoofBuildGms(Context context) {
         String packageName = "com.goolag.pif";
 
-        if (!CustomUtils.isPackageInstalled(context, packageName)) {
+        if (!Utils.isPackageInstalled(context, packageName)) {
             Log.e(TAG, "'" + packageName + "' is not installed.");
             return;
         }
