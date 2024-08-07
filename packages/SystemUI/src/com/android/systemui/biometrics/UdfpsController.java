@@ -49,7 +49,6 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.PowerManager;
 import android.os.Trace;
-import android.os.UserHandle;
 import android.os.VibrationAttributes;
 import android.os.VibrationEffect;
 import android.provider.Settings;
@@ -362,13 +361,8 @@ public class UdfpsController implements DozeReceiver, Dumpable {
                     return;
                 }
                 if (vendorCode == mUdfpsVendorCode) {
-                    if (mContext.getResources().getBoolean(R.bool.config_pulseOnFingerDown)) {
-                        mContext.sendBroadcastAsUser(new Intent(PULSE_ACTION),
-                                new UserHandle(UserHandle.USER_CURRENT));
-                    } else {
-                        mPowerManager.wakeUp(mSystemClock.uptimeMillis(),
-                                PowerManager.WAKE_REASON_GESTURE, TAG);
-                    }
+                    mPowerManager.wakeUp(mSystemClock.uptimeMillis(),
+                            PowerManager.WAKE_REASON_GESTURE, TAG);
                     onAodInterrupt(0, 0, 0, 0);
                 }
             }
