@@ -263,7 +263,7 @@ public class PhoneStatusBarPolicy
         mDateFormatUtil = dateFormatUtil;
 
         Dependency.get(TunerService.class).addTunable(this,
-                NETWORK_TRAFFIC_LOCATION;
+                NETWORK_TRAFFIC_LOCATION);
     }
 
     /** Initialize the object after construction. */
