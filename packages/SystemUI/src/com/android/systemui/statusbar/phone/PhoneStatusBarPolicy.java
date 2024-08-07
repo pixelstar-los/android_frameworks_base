@@ -113,7 +113,6 @@ public class PhoneStatusBarPolicy
     private static final String TAG = "PhoneStatusBarPolicy";
     private static final boolean DEBUG = Log.isLoggable(TAG, Log.DEBUG);
 
-    static final int LOCATION_STATUS_ICON_ID = PrivacyType.TYPE_LOCATION.getIconId();
     private static final String NETWORK_TRAFFIC_LOCATION =
             "lineagesecure:" + LineageSettings.Secure.NETWORK_TRAFFIC_LOCATION;
 
