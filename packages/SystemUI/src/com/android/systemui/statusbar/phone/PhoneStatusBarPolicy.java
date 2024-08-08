@@ -108,6 +108,7 @@ public class PhoneStatusBarPolicy
                 Listener,
                 ZenModeController.Callback,
                 DeviceProvisionedListener,
+                KeyguardStateController.Callback,
                 RecordingController.RecordingStateChangeCallback,
                 TunerService.Tunable {
     private static final String TAG = "PhoneStatusBarPolicy";
@@ -408,7 +409,6 @@ public class PhoneStatusBarPolicy
                 mShowNetworkTraffic =
                         TunerService.parseInteger(newValue, 0) == 1;
                 updateNetworkTraffic();
-                break;
                 break;
             default:
                 break;
